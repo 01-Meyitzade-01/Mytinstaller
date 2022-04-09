@@ -20,7 +20,7 @@ def soru (soru):
    return console.input(f"[bold yellow]>> [/]")
 def logo (dil = "None"):
    surum = str(sys.version_info[0]) + "." + str(sys.version_info[1])
-   console.print(Panel(f"[bold blue]@OwenUserBot Installer ✨[/]\n\n[bold cyan]Version: [/][i]2.1[/]\n[bold cyan]Python: [/][i]{surum}[/]\n[bold cyan]Dil: [/][i]{dil}[/]",width=80),justify="center")                         
+   console.print(Panel(f"[bold blue]@MytUserBot Installer ✨[/]\n\n[bold cyan]Version: [/][i]2.1[/]\n[bold cyan]Python: [/][i]{surum}[/]\n[bold cyan]Dil: [/][i]{dil}[/]",width=80),justify="center")                         
 def tamamlandi (saniye):
    console.print(Panel(f"[bold green]Kurulum Tamamlandı!\n[i]Botu {round(saniye)} saniye içinde Kurdunuz.[/]\n\n[bold green]Bir süre sonra herhangi bir sohbete .alive yazarak test edebilirsiniz. İyi günler dilerim :)[/]",width=70),justify="center")                     
                    
