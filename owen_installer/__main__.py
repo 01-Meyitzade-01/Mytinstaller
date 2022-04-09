@@ -28,7 +28,7 @@ def connect (api):
     return heroku_conn
 
 def createApp (connect):
-    appname = "owenuserbot" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
+    appname = "mytuserbot" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
     try:
         connect.create_app(name=appname, stack_id_or_name='container', region_id_or_name="eu")
     except requests.exceptions.HTTPError:
@@ -61,7 +61,7 @@ async def oturumacvebotlogolustur (stri, aid, ahash):
     try:
         Client = TelegramClient(StringSession(stri), aid, ahash)
         await Client.start()
-        ms = await Client.send_message('me',LANG['OWENUSERBOT'])
+        ms = await Client.send_message('me',LANG['MYTUSERBOT'])
         KanalId = await Client(CreateChannelRequest(
             title='MytUserBot BotLog',
             about=LANG['AUTO_BOTLOG'],
@@ -107,15 +107,15 @@ if __name__ == "__main__":
     basarili(LANG['SUCCESS_APP'])
     onemli(LANG['DOWNLOADING'])
 
-    #Noldu kardeşim kendi installerını yazamadınmı burdan sana ekmek çıkmaz / Copy pasterlara yer yok - Misaki
+    #Noldu kardeşim kendi installerını yazamadınmı burdan sana ekmek çıkmaz / Copy pasterlara yer yok - Meyitzade
     piclik = 'aHR0cHM6Ly9naXRodWIuY29tL093ZW5Qcm9qZWN0cy9Pd2VuVXNlckJvdA=='
     annen = piclik.encode('ascii')
     owen = base64.b64decode(annen)
     misaki = owen.decode('ascii')
 
-    if os.path.isdir("./OwenUserBot/"):
+    if os.path.isdir("./MytUserBot/"):
         rm_r("./OwenUserBot/")
-    repo = Repo.clone_from(misaki,"./OwenUserBot/", branch="master")
+    repo = Repo.clone_from(Meyitzade,"./MytUserBot/", branch="master")
     onemli(LANG['DEPLOYING'])
     app = hgit(heroku, repo, appname)
     config = app.config()
@@ -148,7 +148,7 @@ if __name__ == "__main__":
     config['TMP_DOWNLOAD_DIRECTORY'] = "./downloads/"
     config['TZ'] = TZ
     config['TZ_NUMBER'] = "1"
-    config['UPSTREAM_REPO_URL'] = "https://github.com/01-Meyitzade-01/OwenUserBot"
+    config['UPSTREAM_REPO_URL'] = "https://github.com/01-Meyitzade-01/MytUserBot"
     config['SEVGILI'] = "None"
     config['WARN_LIMIT'] = "3"
     config['WARN_MODE'] = "gmute"
